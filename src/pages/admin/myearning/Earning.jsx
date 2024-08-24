@@ -1,24 +1,24 @@
 import { FiDollarSign } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const Earnings = () => {
-  // Dummy data for the table
   const earningsData = [
     {
       serviceCode: 'SR001',
       applyDate: '2024-08-01',
-      status: 'Pending',
+      status: 'Bank Loan',
       commission: 'Rs. 500',
     },
     {
       serviceCode: 'SR002',
       applyDate: '2024-08-02',
-      status: 'Completed',
+      status: 'Education Loan',
       commission: 'Rs. 1000',
     },
     {
       serviceCode: 'SR003',
       applyDate: '2024-08-03',
-      status: 'In Progress',
+      status: 'Service Loan',
       commission: 'Rs. 700',
     },
     // Add more dummy data as needed
@@ -28,10 +28,10 @@ const Earnings = () => {
     <div className="container mx-auto p-6">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-semibold text-gray-700">My Earnings</h1>
-        <button className="bg-blue-600 text-white text-lg font-semibold px-6 py-3 rounded-lg shadow-md flex items-center space-x-2 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <Link to="/admin/withdraw" className="bg-blue-600 text-white text-lg font-semibold px-6 py-3 rounded-lg shadow-md flex items-center space-x-2 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
           <FiDollarSign className="text-xl" />
           <span>Withdraw</span>
-        </button>
+        </Link>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
         <div className="bg-blue-500 p-6 rounded-lg shadow-lg flex items-center space-x-4">
@@ -76,7 +76,7 @@ const Earnings = () => {
                 Apply Date
               </th>
               <th className="py-2 px-4 text-left text-sm font-medium text-gray-600 border-b border-gray-200">
-                Status
+                Service
               </th>
               <th className="py-2 px-4 text-left text-sm font-medium text-gray-600 border-b border-gray-200">
                 Commission
@@ -95,9 +95,9 @@ const Earnings = () => {
                   </td>
                   <td
                     className={`py-2 px-4 border-b border-gray-200 ${
-                      earning.status === 'Completed'
+                      earning.status === 'Education Loan'
                         ? 'text-green-600'
-                        : earning.status === 'Pending'
+                        : earning.status === 'Service Loan'
                         ? 'text-yellow-600'
                         : 'text-blue-600'
                     }`}

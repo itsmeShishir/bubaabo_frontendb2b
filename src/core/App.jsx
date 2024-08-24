@@ -19,6 +19,7 @@ import EducationLoanForm from "../pages/admin/services/loan/EducationLoanForm"
 import OtpConfirmation from "../pages/user/Forget/OtpConfirmation"
 import UpdatePassword from "../pages/admin/other/UpdatePassword"
 import ChangePassword from "../pages/user/Forget/ChangePassword"
+import Withdraw from "../pages/admin/myearning/withdraw"
 
 const App = () => {
   return (
@@ -47,6 +48,7 @@ const App = () => {
           </Route>
         </Route>
         <Route path="earnings" element={<Earnings />} />
+        <Route path="withdraw" element={<Withdraw />} />
         <Route path="support" element={<SupportPage />} />
         <Route path="video-guide" element={<Guide />} />
         <Route path="my-details">

@@ -10,6 +10,7 @@ import {
   FiChevronLeft,
 } from 'react-icons/fi';
 
+
 const Sidebar = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -23,7 +24,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`h-full flex flex-col shadow-lg transition-width duration-300 ${isCollapsed ? 'w-20' : 'w-64'} bg-gradient-to-b from-blue-800 to-blue-900 text-white`}>
+    <div className={`h-full flex flex-col shadow-lg transition-width duration-300 ${isCollapsed ? 'w-20' : 'w-64'} bg-gradient-to-b from-[#004e9f] to-[#004e9f] text-white`}>
       <div className="flex items-center justify-center py-6 border-b border-blue-700">
         {!isCollapsed && <span className="text-2xl font-bold">BIBAABO</span>}
         {isCollapsed && <span className="text-2xl font-bold">B</span>}
@@ -32,8 +33,8 @@ const Sidebar = () => {
         {/* Dashboard */}
         <li className="px-6 py-2 hover:bg-blue-700">
           <Link to="/admin" className="flex items-center space-x-2">
-            <FiHome />
-            {!isCollapsed && <span>Dashboard</span>}
+            <FiHome className='text-[#ff598b]' />
+            {!isCollapsed && <span className='text-xl'>Dashboard</span>}
           </Link>
         </li>
 
@@ -44,8 +45,8 @@ const Sidebar = () => {
             onClick={() => toggleMenu('services')}
           >
             <div className="flex items-center space-x-2">
-              <FiUsers />
-              {!isCollapsed && <span>Services</span>}
+              <FiUsers className='text-[#ff598b]' />
+              {!isCollapsed && <span className='text-xl'>Services</span>}
             </div>
             {!isCollapsed && <FiChevronRight className={`${openMenu === 'services' && 'transform rotate-90'}`} />}
           </button>
@@ -92,8 +93,8 @@ const Sidebar = () => {
             className="w-full px-6 py-2 text-left flex justify-between items-center hover:bg-blue-700 focus:outline-none"
           >
             <div className="flex items-center space-x-2">
-              <FiDollarSign />
-              {!isCollapsed && <span>My Earnings</span>}
+              <FiDollarSign className='text-[#ff598b]' />
+              {!isCollapsed && <span className='text-xl'>My Earnings</span>}
             </div>
           </Link>
         </li>
@@ -104,8 +105,8 @@ const Sidebar = () => {
             className="w-full px-6 py-2 text-left flex justify-between items-center hover:bg-blue-700 focus:outline-none"
           >
             <div className="flex items-center space-x-2">
-              <FiClock />
-              {!isCollapsed && <span>My Service Requests</span>}
+              <FiClock className='text-[#ff598b]' />
+              {!isCollapsed  && <span className='text-xl'>My Service Requests</span>}
             </div>
           </Link>
         </li>
@@ -116,8 +117,8 @@ const Sidebar = () => {
             className="w-full px-6 py-2 text-left flex justify-between items-center hover:bg-blue-700 focus:outline-none"
           >
             <div className="flex items-center space-x-2">
-              <FiClock />
-              {!isCollapsed && <span>Support</span>}
+              <FiClock className='text-[#ff598b]' />
+              {!isCollapsed && <span className='text-xl'>Support</span>}
             </div>
           </Link>
         </li>
@@ -128,8 +129,8 @@ const Sidebar = () => {
             className="w-full px-6 py-2 text-left flex justify-between items-center hover:bg-blue-700 focus:outline-none"
           >
             <div className="flex items-center space-x-2">
-              <FiZap />
-              {!isCollapsed && <span>Video Guide</span>}
+              <FiZap className='text-[#ff598b]' />
+              {!isCollapsed && <span className='text-xl'>Video Guide</span>}
             </div>
           </Link>
         </li>
